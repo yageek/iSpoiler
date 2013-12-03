@@ -150,52 +150,56 @@
 
     NSString *result = [[NSString alloc] initWithData:_receivedData encoding:NSUTF8StringEncoding];
     NSArray *temp = [[result componentsMatchedByRegex:IMG_LINK_REGEXP_4] retain];
-
+    
+    [result release];
     if(temp.count>0)
     {
         NSLog(@"Images were found for %@",_nodeItem.gccode);
         for(NSString * found in temp)
         {
-            
-            if(self.isCancelled)
+            @autoreleasepool
             {
-                [self finishTask];
-                return;
-            }
-
-            NSString *imageUrl = [[found componentsMatchedByRegex:IMG_LINK_REGEXP_4 capture:1] lastObject];
-            NSString * imageName = [[found componentsMatchedByRegex:IMG_LINK_REGEXP_4 capture:2] lastObject];
-            
-            if([[NSApp delegate] downloadSpoilersOnly])
-            {
-                if([imageName rangeOfString:@"spoiler" options:NSCaseInsensitiveSearch].location == NSNotFound)
+                
+                if(self.isCancelled)
                 {
-                    continue;
+                    [self finishTask];
+                    return;
                 }
+
+                NSString *imageUrl = [[found componentsMatchedByRegex:IMG_LINK_REGEXP_4 capture:1] lastObject];
+                NSString * imageName = [[found componentsMatchedByRegex:IMG_LINK_REGEXP_4 capture:2] lastObject];
+                
+                if([[NSApp delegate] downloadSpoilersOnly])
+                {
+                    if([imageName rangeOfString:@"spoiler" options:NSCaseInsensitiveSearch].location == NSNotFound)
+                    {
+                        continue;
+                    }
+                }
+
+                Image* image = [Image insertInManagedObjectContext:_context];
+                
+                image.url = imageUrl;
+                image.name = imageName;
+
+                /*Core Data*/
+                [_currentCache addImagesObject:image];
+                if(![_context save:nil])
+                {
+                    NSLog(@"Error by saving");
+                    _nodeItem.completion = -1.0f;
+                    _nodeItem.status = YGNodeItemStatusHTMLError;
+                }
+
+                /*OutlineView*/
+                YGNodeItem * item = [YGNodeItem nodeFromImage:image];
+                item.status = YGNodeItemStatusHTMLFinished;
+                item.parent = _nodeItem;
+                [_nodeItem.childs addObject:item];
+                
+                /* Download */
+                [[YGDownloadManager sharedInstance] addItemToDownload:item];
             }
-
-            Image* image = [Image insertInManagedObjectContext:_context];
-            
-            image.url = imageUrl;
-            image.name = imageName;
-
-            /*Core Data*/
-            [_currentCache addImagesObject:image];
-            if(![_context save:nil])
-            {
-                NSLog(@"Error by saving");
-                _nodeItem.completion = -1.0f;
-                _nodeItem.status = YGNodeItemStatusHTMLError;
-            }
-
-            /*OutlineView*/
-            YGNodeItem * item = [YGNodeItem nodeFromImage:image];
-            item.status = YGNodeItemStatusHTMLFinished;
-            item.parent = _nodeItem;
-            [_nodeItem.childs addObject:item];
-            
-            /* Download */
-            [[YGDownloadManager sharedInstance] addItemToDownload:item];
         }
         
 
@@ -207,6 +211,7 @@
         _nodeItem.status = YGNodeItemStatusNoImageFound;
     }
     
+    [temp release];
     [self finishTask];
     
 }

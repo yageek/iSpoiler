@@ -70,7 +70,8 @@
     }
     
     [_managedObjectContext release];
-   
+    [parser release];
+    
     if(_completionBlock)
     {
        _completionBlock(_currentFile.objectID,processError);
