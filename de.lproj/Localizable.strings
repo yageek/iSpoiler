@@ -1,0 +1,76 @@
+/* 
+  Localizable.strings
+  iSpoiler
+
+  Created by Yannick Heinrich on 03/12/2013.
+  Copyright (c) 2013 YaGeek. All rights reserved.
+*/
+
+"GPXProcessing" = "GPX Datei wird bearbeitet";
+"Geocache" = "Geocache";
+"Name" = "Name";
+"Latitude" = "Latitude";
+"Longitdude" = " Longitude";
+"Process" = "Prozess";
+"PocketQueryFiles" = "GPX Datei auswählen...";
+"Download" = "Herunterladen";
+"SaveToDevice" = "Export für Garmin-Gerät ...";
+"Preferences" = "Einstellungen";
+"Done" = "Fertig";
+"Browse" = "Durchsuchen";
+"About" = "Über iSpoiler";
+"HelpMain" = "Hilfe";
+"Cancel" = "Abbrechen";
+"Continue" = "Weitergehen";
+"DirectoryExistMessage" = "Ein Verzeichnis existiert bereits. Was wollenSie machen ?";
+"DirectoryExportMessage" = "Ein Verzeichnis existiert bereits. Wollen Sie es löschen ?";
+"Quit" = "iSpoiler beenden";
+"iSpoilerHelp" = "iSpoiler's Hilf";
+
+//Download process
+"Completed" = "Fertig";
+"DownloadCache" = "HerunterLadung: %@";
+"Cancelled" = "Abgebrochen";
+"NoSpoilersFound" ="Kein spoilers werden gefunden";
+"DownloadHTML" = "HTML wird heruntergeladen";
+"AnalyseImage" = "Bilder werden analysiert";
+"ConvertJPG" = "Bilder werden auf JPG umgewandelt";
+"Geotagging" = "Bilder werden lokalisiert";
+"Could not Download HTML" = "Die HTML Dateien sind unerreichbar";
+"Could not write image on disk" = "Das Bild kann nicht gespeichert werden";
+"Could not download image" = "Das bild ist unerreichbar";
+//Convert process
+"Could not write image to JPG" ="Das Bild kann nicht auf JPG umgewandelt werden";
+"Could not open download image" = "Das Bild kann nicht geöffnet werden";
+"Could not write tagged image" = "Das Bild kann nicht lokalisiert werden";
+//Export process
+"Export finished at path" = "Bilder werden auf %@ gespeichert";
+"StatusBarProgress"= "Insgesamt : %lu  Fertig : %lu";
+"Error Occured" = "Ein Fehler ist aufgetreten";
+"Could not create the sotrage directory for cache"= "Ein Verzeichnis für die Geocache kann nicht erstellt werden";
+"Could not copy the temporary path to the selected one" = "Ein Fehler ist aufgetreten";
+"Could not clear the temporary path" = "Der vorübergehend Verzeichnis kann nicht geleert werden";
+"No iSpoilerSync folder found" = "Kein iSpoilerSync Verzeichnis wird gefunden";
+"No iSpoilerSync folder was found." = "Kein iSpoilerSync Verzeichnis wird gefunden";
+"No items to export" = "Kein Bild um zu exportieren";
+"The iSpoilerSync folder seems to be empty." = "Der iSpoilerSync Verzeichnis ist leer.";
+
+"Select the iSpoilerSync directory" = "Wählen Sie das iSpoilerSync Verzeichnis";
+"Choose export path" = "Wählen Sie das Export-Verzeichnis";
+"Wrong directory" = "Falsche Verzeichnis";
+"The name of this directory is not equal to iSpoilerSync"="Der Name dieses Verzeichnisses ist nicht gleich iSpoilerSync";
+
+"Export finished" = "Exportierung wird ausgefüllt";
+"Merge" = "Zusammenführen";
+"Delete" = "Löschen";
+
+//New process
+"Error by parsing HTML." = "während HTML-Parsing ein Fehler auftritt";
+"ConvertJPG finished" = "Das Bild wurde erfolgreich konvertiert";
+"DownloadJPG finished" = "Image was successfully downloaded";
+"DownloadJPG Error" = "während HTML-Parsing ein Fehler auftritt";
+"Downloading image..." = "Herunterladen von Bild ...";
+"Successfully geotag image." = "Das Bild wurde erfolgreich Geotags versehen";
+"Processing cache..." = "Verarbeitung Cache...";
+"Processing..." = "Verarbeitung ...";
+"View on Geocaching.com" = "Auf Geocaching.com ansehen";

@@ -1,0 +1,78 @@
+/* 
+  Localizable.strings
+  iSpoiler
+
+  Created by Yannick Heinrich on 03/12/2013.
+  Copyright (c) 2013 YaGeek. All rights reserved.
+*/
+
+
+"GPXProcessing" = "GPX file is being processed";
+"Geocache" = "Geocache";
+"Name" = "Name";
+"Latitude" = "Latitude";
+"Longitdude" = " Longitude";
+"Process" = "Process";
+"PocketQueryFiles" = "Choose GPX file ...";
+"Download" = "Download";
+"SaveToDevice" = "Export for Garmin device ...";
+"Preferences" = "Preferences";
+"Done" = "Done";
+"Browse" = "Browse";
+"About" = "About iSpoiler";
+"HelpMain" = "Help";
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+"DirectoryExistMessage" = "A previous directory exist. What do you wan to do ?";
+"DirectoryExportMessage" = "A previous directory exist. Do you want to delete it ?";
+"Quit" = "Quit iSpoiler";
+"iSpoilerHelp" = "iSpoiler Help";
+
+//Download process
+"Completed" = "Completed";
+"DownloadCache" = "Download: %@";
+"Cancelled" = "Cancelled";
+"NoSpoilersFound" ="No spoilers found";
+"DownloadHTML" = "Downloading HTML";
+"AnalyseImage" = "Images analysis";
+"ConvertJPG" = "Converting images";
+"Geotagging" = "Geotagging images";
+"Could not Download HTML" = "Could not download HTML";
+"Could not write image on disk" = "Could not write image on disk";
+"Could not download image" = "Could not download image";
+//Convert process
+"Could not write image to JPG" ="Could not write image to JPG";
+"Could not open download image" = "Could not open download image";
+"Could not write tagged image" = "Could not write tagged image";
+//Export process
+"Export finished at path" = "Images were exported to %@";
+"StatusBarProgress"= "Total: %lu  Completed: %lu";
+"Error Occured" = "An error occurred";
+"Could not create the sotrage directory for cache"= "The storage directory of the cache could not be created";
+"Could not copy the temporary path to the selected one" = "An error occurred";
+"Could not clear the temporary path" = "The temporary directory could not been cleared";
+"No iSpoilerSync folder found" = "No iSpoilerSync directory";
+"No iSpoilerSync folder was found." = "No iSpoilerSync folder was found";
+"No items to export" = "No elements to export";
+"The iSpoilerSync folder seems to be empty." = "The iSpoilerSync folder seems to be empty.";
+
+"Select the iSpoilerSync directory" = "Select the iSpoilerSync directory";
+"Choose export path" = "Choose export path";
+"Wrong directory" = "Wrong directory";
+"The name of this directory is not equal to iSpoilerSync"="The name of this directory is not equal to iSpoilerSync";
+
+"Export finished" = "Export finished";
+"Merge" = "Merge";
+"Delete" = "Delete";
+
+
+//New Process
+"Error by parsing HTML." = "An error occurs during HTML parsing";
+"ConvertJPG finished" = "Image was successfully converted";
+"DownloadJPG finished" = "Image was successfully downloaded";
+"DownloadJPG Error" = "An error occurs during image downloading";
+"Downloading image..." = "Downloading image...";
+"Successfully geotag image." = "Image was successfully geotagged";
+"Processing cache..." = "Processing cache...";
+"Processing..." = "Processing ...";
+"View on Geocaching.com" = "View on Geocaching.com";

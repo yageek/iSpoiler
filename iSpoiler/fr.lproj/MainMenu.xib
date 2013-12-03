@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1060" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5023"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="AMainMenu" systemMenu="main" id="29">
+            <items>
+                <menuItem title="iSpoiler" id="56">
+                    <menu key="submenu" title="iSpoiler" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About iSpoiler" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide iSpoiler" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit iSpoiler" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Aide" id="490">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Aide" systemMenu="help" id="491">
+                        <items>
+                            <menuItem title="Aide iSpoiler" keyEquivalent="?" id="492">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="493"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="iSpoiler" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="915" height="292"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="1002"/>
+            <view key="contentView" id="372">
+                <rect key="frame" x="0.0" y="0.0" width="915" height="292"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <progressIndicator maxValue="100" indeterminate="YES" style="bar" id="zec-9l-yOp">
+                        <rect key="frame" x="140.9999861004884" y="-63" width="300" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
+                    </progressIndicator>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="uWQ-Hn-gEB">
+                        <rect key="frame" x="-168" y="-62" width="164" height="17"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="7Nc-XJ-Xsb">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="AA3BF97A-891C-4B2D-A84A-A3EF07669348" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="3hF-Eg-hfZ">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="WqD-ms-cEv"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="llo-lo-x2A"/>
+                    <toolbarItem implicitItemIdentifier="796C7B93-6401-4E6D-9D07-BDBBB964C447" label="Choisir un fichier GPX ..." paletteLabel="Choisir un fichier GPX ..." tag="-1" image="input_file" id="vw6-8q-svQ">
+                        <connections>
+                            <action selector="importGPXClicked:" target="494" id="Hra-Sy-YrK"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="4DD27211-417E-48B1-A38D-DB70F0356171" label="Téléchargement" paletteLabel="Téléchargement" tag="-1" image="run" id="hIC-gh-IWE">
+                        <connections>
+                            <action selector="downloadButtonTriggered:" target="494" id="8Ww-QJ-a9c"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="4D437F94-A02F-4589-8357-CDD8580F5708" label="Exporter pour appareil Garmin ..." paletteLabel="Exporter pour appareil Garmin ..." tag="-1" image="save_disk" id="Q7J-ZW-p88">
+                        <connections>
+                            <action selector="exportButtonTriggered:" target="494" id="sjZ-xC-NIZ"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="vw6-8q-svQ"/>
+                    <toolbarItem reference="llo-lo-x2A"/>
+                    <toolbarItem reference="hIC-gh-IWE"/>
+                    <toolbarItem reference="llo-lo-x2A"/>
+                    <toolbarItem reference="Q7J-ZW-p88"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <contentBorderThickness minY="32"/>
+        </window>
+        <customObject id="494" customClass="YGAppDelegate">
+            <connections>
+                <outlet property="downloadToolBarItem" destination="hIC-gh-IWE" id="koW-H1-D0T"/>
+                <outlet property="exportToolBarItem" destination="Q7J-ZW-p88" id="RAr-Bs-NE7"/>
+                <outlet property="importToolBarItem" destination="vw6-8q-svQ" id="z0G-PC-96b"/>
+                <outlet property="statusBarProgressIndicator" destination="zec-9l-yOp" id="4NI-0M-RTj"/>
+                <outlet property="statusBarTextField" destination="uWQ-Hn-gEB" id="gwu-es-EYN"/>
+                <outlet property="toolbar" destination="3hF-Eg-hfZ" id="HDX-It-NfM"/>
+                <outlet property="window" destination="371" id="532"/>
+            </connections>
+        </customObject>
+        <customObject id="420" customClass="NSFontManager"/>
+        <userDefaultsController id="Idl-Yy-Cvh"/>
+    </objects>
+    <resources>
+        <image name="input_file" width="48" height="48"/>
+        <image name="run" width="128" height="128"/>
+        <image name="save_disk" width="128" height="128"/>
+    </resources>
+</document>

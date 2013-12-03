@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5029" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="GeoCache" representedClassName="GeoCache" syncable="YES">
+        <attribute name="gccode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gpxFile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GPXFile" inverseName="caches" inverseEntity="GPXFile" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Image" inverseName="cache" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="GPXFile" representedClassName="GPXFile" syncable="YES">
+        <attribute name="generatedTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="importedDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="caches" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GeoCache" inverseName="gpxFile" inverseEntity="GeoCache" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="downloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cache" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoCache" inverseName="images" inverseEntity="GeoCache" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GeoCache" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="GPXFile" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Image" positionX="0" positionY="0" width="128" height="120"/>
+    </elements>
+</model>

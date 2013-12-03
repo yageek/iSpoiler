@@ -1,0 +1,16 @@
+PODS:
+  - Expecta (0.2.2)
+  - RegexKitLite (4.0)
+  - Specta (0.1.9)
+
+DEPENDENCIES:
+  - Expecta (~> 0.2.1)
+  - RegexKitLite (~> 4.0)
+  - Specta (= 0.1.9)
+
+SPEC CHECKSUMS:
+  Expecta: 99adbb2e366a02796477523bfd426143350d9caf
+  RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
+  Specta: 6ac5862bbff1a42269c2d582e4696f8b132d46cc
+
+COCOAPODS: 0.28.0
