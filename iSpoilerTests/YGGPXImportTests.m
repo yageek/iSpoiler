@@ -10,8 +10,7 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import "YGParseGPXOperation.h"
-#import<CocoaLumberjack/DDLog.h>
-#import <CocoaLumberjack/DDTTYLogger.h>
+#import "GeoCache.h"
 
 static NSManagedObjectContext * _testContext;
 static NSPersistentStoreCoordinator * _store;
@@ -22,7 +21,6 @@ SpecBegin(GPXImport)
 describe(@"GPX Import",^{
 
     beforeAll(^{
-        [DDLog addLogger:[DDTTYLogger sharedInstance]];
         NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"GpxModel" withExtension:@"momd"];
 
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
@@ -48,7 +46,7 @@ describe(@"GPX Import",^{
         NSBundle * bundle = [NSBundle bundleWithPath:bundlePath];
         NSURL * gpxURL = [bundle URLForResource:@"STRASBOURG" withExtension:@"gpx"];
 
-        YGParseGPXOperation * op = [[YGParseGPXOperation alloc] initWithGPXURL:gpxURL WithCoordinator:_store andCompletionblock:^(NSError *error){
+        YGParseGPXOperation * op = [[YGParseGPXOperation alloc] initWithGPXURL:gpxURL WithCoordinator:_store andCompletionblock:^(NSManagedObjectID * fileID, NSError * error){
             dispatch_async(dispatch_get_main_queue(), ^{
                 expect(error).to.beNil();
             });
@@ -64,6 +62,41 @@ describe(@"GPX Import",^{
         [op release];
 
 
+    });
+    
+    it(@"should import have GCCode equals to GC2VP3A", ^AsyncBlock{
+        
+        
+        NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"gpxTest" ofType:@"bundle"];
+        NSBundle * bundle = [NSBundle bundleWithPath:bundlePath];
+        NSURL * gpxURL = [bundle URLForResource:@"Example_iCaching" withExtension:@"gpx"];
+        
+
+        YGParseGPXOperation * op = [[YGParseGPXOperation alloc] initWithGPXURL:gpxURL WithCoordinator:_store andCompletionblock:^(NSManagedObjectID * fileID, NSError * error){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                expect(error).to.beNil();
+            });
+            if(error)
+            {
+             
+                GPXFile * file = (GPXFile*) [_testContext existingObjectWithID:fileID error:nil];
+                
+                expect(file.caches.count).to.equal(1);
+                
+                GeoCache * firstCache = [file.caches anyObject];
+                
+                expect(firstCache.gccode).to.equal(@"GC2VP3A");
+                
+
+            }
+            done();
+        }];
+        
+        
+        [[NSOperationQueue mainQueue] addOperation:op];
+        [op release];
+
+    
     });
 
     afterAll(^{
