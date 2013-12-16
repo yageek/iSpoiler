@@ -8,8 +8,9 @@
 
 #import "YGParseGPXOperation.h"
 
-#define GROUNDSPEAK_URI @"http://www.groundspeak.com/cache/1/0/1"
-
+#define GROUNDSPEAK_URI_1 @"http://www.groundspeak.com/cache/1/0"
+#define GROUNDSPEAK_URI_2 @"http://www.groundspeak.com/cache/1/0/1"
+#define GPX_URI @"http://www.topografix.com/GPX/1/0"
 
 @implementation YGParseGPXOperation
 
@@ -115,11 +116,11 @@
     {
         _currentFile.name = value;
     }
-    else if([elementName isEqualToString:@"name"] && _currentCache && ![namespaceURI isEqualToString:GROUNDSPEAK_URI])
+    else if([elementName isEqualToString:@"name"] && _currentCache && [namespaceURI isEqualToString:GPX_URI])
     {
         _currentCache.gccode = value;
     }
-    else if([elementName isEqualToString:@"name"] && _currentCache && [namespaceURI isEqualToString:GROUNDSPEAK_URI])
+    else if([elementName isEqualToString:@"name"] && _currentCache && ([namespaceURI isEqualToString:GROUNDSPEAK_URI_1] || [namespaceURI isEqualToString:GROUNDSPEAK_URI_2]))
     {
         _currentCache.name = value;
     }
