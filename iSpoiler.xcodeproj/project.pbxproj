@@ -31,7 +31,7 @@
 		78331CC0183A1780009CEEDF /* YGDownloadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78331CBF183A1780009CEEDF /* YGDownloadImageOperation.m */; };
 		78344E1D17FDC65F00C743E3 /* YGDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78344E1C17FDC65F00C743E3 /* YGDownloadManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		783451D1185EE861007CDD3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783451BC185EE7FE007CDD3B /* XCTest.framework */; };
-		783451E1185EE881007CDD3B /* YGGPXImportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 783451E0185EE881007CDD3B /* YGGPXImportTests.m */; };
+		783451E1185EE881007CDD3B /* YGGPXImportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 783451E0185EE881007CDD3B /* YGGPXImportTests.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		783451E3185EE887007CDD3B /* gpxTest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 783451E2185EE887007CDD3B /* gpxTest.bundle */; };
 		7838A368181980CD007AB2C5 /* YGDownloadHTMLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7838A367181980CD007AB2C5 /* YGDownloadHTMLOperation.m */; };
 		783AE78A184E21B50044DFF2 /* _GeoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 783AE789184E21B50044DFF2 /* _GeoCache.m */; };
@@ -797,7 +797,7 @@
 			baseConfigurationReference = F0B6E7DD78264AD0B37E6DCA /* Pods-test.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSpoiler.app/Contents/MacOS/iSpoiler";
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
@@ -821,7 +821,7 @@
 			baseConfigurationReference = F0B6E7DD78264AD0B37E6DCA /* Pods-test.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSpoiler.app/Contents/MacOS/iSpoiler";
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",

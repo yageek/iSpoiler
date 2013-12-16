@@ -35,36 +35,47 @@ describe(@"GPX Import",^{
         _testContext = [[NSManagedObjectContext alloc] init];
         [_testContext setPersistentStoreCoordinator:_store];
 
-        [Expecta setAsynchronousTestTimeout:10.0];
+        [Expecta setAsynchronousTestTimeout:1.0];
         
         
     });
 
+    it(@"should pass", ^{
+       
+        
+        expect(nil).to.beNil;
+    });
     it(@"should import GPX into context",^AsyncBlock{
 
         NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"gpxTest" ofType:@"bundle"];
         NSBundle * bundle = [NSBundle bundleWithPath:bundlePath];
         NSURL * gpxURL = [bundle URLForResource:@"STRASBOURG" withExtension:@"gpx"];
 
-        YGParseGPXOperation * op = [[YGParseGPXOperation alloc] initWithGPXURL:gpxURL WithCoordinator:_store andCompletionblock:^(NSManagedObjectID * fileID, NSError * error){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                expect(error).to.beNil();
-            });
-            if(error)
-            {
-                NSLog(@"Error : %@", error.description);
-            }
-            done();
-        }];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            YGParseGPXOperation * op = [[YGParseGPXOperation alloc] initWithGPXURL:gpxURL WithCoordinator:_store andCompletionblock:^(NSManagedObjectID * fileID, NSError * error){
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    expect(error).to.beNil();
+                });
+                if(error)
+                {
+                    NSLog(@"Error : %@", error.description);
+                }
+                done();
+            }];
+            
+            
+            [[NSOperationQueue mainQueue] addOperation:op];
+            [op release];
+            
 
-
-        [[NSOperationQueue mainQueue] addOperation:op];
-        [op release];
-
+            
+        });
 
     });
     
-    it(@"should import have GCCode equals to GC2VP3A", ^AsyncBlock{
+    it(@"should have GCCode equals to GC2VP3A", ^AsyncBlock{
         
         
         NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"gpxTest" ofType:@"bundle"];
