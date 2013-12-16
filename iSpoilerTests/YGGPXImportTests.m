@@ -75,21 +75,23 @@ describe(@"GPX Import",^{
         YGParseGPXOperation * op = [[YGParseGPXOperation alloc] initWithGPXURL:gpxURL WithCoordinator:_store andCompletionblock:^(NSManagedObjectID * fileID, NSError * error){
             dispatch_async(dispatch_get_main_queue(), ^{
                 expect(error).to.beNil();
-            });
-            if(error)
-            {
-             
-                GPXFile * file = (GPXFile*) [_testContext existingObjectWithID:fileID error:nil];
                 
-                expect(file.caches.count).to.equal(1);
-                
-                GeoCache * firstCache = [file.caches anyObject];
-                
-                expect(firstCache.gccode).to.equal(@"GC2VP3A");
-                
+                if(!error)
+                {
+                    
+                    GPXFile * file = (GPXFile*) [_testContext existingObjectWithID:fileID error:nil];
+                    
+                    expect(file.caches.count).to.equal(1);
+                    
+                    GeoCache * firstCache = [file.caches anyObject];
+                    
+                    expect(firstCache.gccode).to.equal(@"GC2VP3A");
+                    
+                    
+                }
+                done();
 
-            }
-            done();
+            });
         }];
         
         
