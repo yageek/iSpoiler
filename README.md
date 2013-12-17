@@ -8,4 +8,12 @@ iSpoiler
 Mac OS X spoiler downloader tool for geocaching.com.
 
 ## Download
-Bintray : [Last release (1.2)](http://dl.bintray.com/yageek/iSpoiler/iSpoiler1.2.dmg)
+Bintray : [Last release (1.2.1)](http://dl.bintray.com/yageek/iSpoiler/iSpoiler1.2.1.dmg)
+
+# Changelog 
+#### 1.2.1
+* Fix iCaching GPX import bug
+* Memory leaks fixed
+
+#### 1.2
+* First open source release
