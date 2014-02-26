@@ -11,6 +11,9 @@
 #import "YGAppDelegate+StatusBar.h"
 #import "YGAppDelegate+Download.h"
 #import "YGDownloadManager.h"
+
+#define kExpireAppStore @"net.yageek.iSpoiler.expireAppStore"
+
 @implementation YGAppDelegate
 
 @synthesize importToolBarItem = _importToolBarItem;
