@@ -77,4 +77,10 @@
     
     return;
 }
+
+- (void) clearItems
+{
+    [_rootElement release];
+    _rootElement = nil;
+}
 @end

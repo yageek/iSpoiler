@@ -8,13 +8,14 @@
 
 #import "YGGpxStore+ImportGPX.h"
 #import "YGParseGPXOperation.h"
-
+#import "YGGpxStore+OutlineViewDataSource.h"
 
 @implementation YGGpxStore (ImportGPX)
 
 - (void) addGPXFromURLS:(NSArray*) urls WithCompletionBlock:(error_block)block
 {
 
+    
     _importCompletionBlock = [block copy];
     NSLog(@"Importing files : %@", urls);
     

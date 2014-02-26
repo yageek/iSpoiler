@@ -11,6 +11,9 @@
 #import "YGAppDelegate+StatusBar.h"
 #import "YGAppDelegate+Download.h"
 #import "YGDownloadManager.h"
+
+#define kExpireAppStoreUnderstood @"net.yageek.iSpoiler.expireAppStoreUnderstood"
+
 @implementation YGAppDelegate
 
 @synthesize importToolBarItem = _importToolBarItem;
@@ -24,6 +27,10 @@
 @synthesize jobsNumber = _jobsNumber;
 @synthesize downloadSpoilersOnly = _downloadSpoilersOnly;
 
+- (IBAction)seeOnGithubTriggered:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://yageek.github.io/iSpoiler"]];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -39,6 +46,9 @@
     self.downloadSpoilersOnly = NO;
     _isProcessing = NO;
     _isStopping = NO;
+    
+
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{kExpireAppStoreUnderstood : @NO}];
     
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:kISpoilerSyncParentDirectory];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -59,6 +69,32 @@
         
         
     }];
+    
+    BOOL showAlert = [[[NSUserDefaults standardUserDefaults] valueForKey:kExpireAppStoreUnderstood] boolValue];
+    if(!showAlert)
+    {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:NSLocalizedString(@"App Expire Soon - Stop annoying", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"App Expire Soon - Rappel", nil)];
+        [alert addButtonWithTitle:NSLocalizedString(@"App Expire Soon - Open Github", nil)];
+        [alert setMessageText:NSLocalizedString(@"App Expire Soon - Title", nil)];
+        [alert setInformativeText:NSLocalizedString(@"App Expire Soon - Text", nil)];
+        [alert setAlertStyle:NSWarningAlertStyle];
+    
+        NSInteger result =[alert runModal];
+        if(result == NSAlertFirstButtonReturn)
+        {
+            [[NSUserDefaults standardUserDefaults] setValue:@YES forKey:kExpireAppStoreUnderstood];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        else if(result == NSAlertThirdButtonReturn)
+        {
+            [self seeOnGithubTriggered:self];
+        }
+        
+        [alert release];
+    }
+    
 }
 
 

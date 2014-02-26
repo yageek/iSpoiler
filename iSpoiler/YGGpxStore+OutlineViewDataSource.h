@@ -12,4 +12,5 @@
 
 - (void) resetAllNodesInNode:(YGNodeItem*) node;
 - (NSInteger) numberOfItems;
+- (void) clearItems;
 @end
