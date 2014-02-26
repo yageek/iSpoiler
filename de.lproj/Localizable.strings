@@ -74,3 +74,10 @@
 "Processing cache..." = "Verarbeitung Cache...";
 "Processing..." = "Verarbeitung ...";
 "View on Geocaching.com" = "Auf Geocaching.com ansehen";
+
+//App Store expiration
+"App Expire Soon - Title" = "iSpoiler zieht um";
+"App Expire Soon - Text" = "Am Endes des Monats wird iSpoiler aus AppStore wegziehen. Sie können die letztes Versionen auf Github's Webseite herunterladen.";
+"App Expire Soon - Open Github" = "Github's Webseite öffnen";
+"App Expire Soon - Stop annoying" = "Stoppen Sie erinnern mich";
+"App Expire Soon - Rappel" = "Später erinnern";

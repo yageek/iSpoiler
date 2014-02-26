@@ -19,7 +19,6 @@
     _importCompletionBlock = [block copy];
     NSLog(@"Importing files : %@", urls);
     
-    [self clearItems];
     NSMutableArray * operations = [NSMutableArray array];
     
     for(NSURL * url in urls)
