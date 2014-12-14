@@ -86,7 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2587C89FAD0E4DA1A3CD81E6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		0D1A97A2EB01F9A197F36FE9 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
+		722DE86E65C650666E69E1D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		78028C0F17FCA0F90099EA23 /* YGOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGOutlineView.h; sourceTree = "<group>"; };
 		78028C1017FCA0F90099EA23 /* YGOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGOutlineView.m; sourceTree = "<group>"; };
 		78028C1217FCA1770099EA23 /* YGOutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGOutlineViewController.h; sourceTree = "<group>"; };
@@ -180,9 +181,10 @@
 		78DDFDFC184E112C00004733 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		78DDFDFD184E147000004733 /* ExportView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExportView.xib; sourceTree = "<group>"; };
 		78DDFE1F184E1C3900004733 /* iSpoiler.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iSpoiler.help; path = iSpoiler/iSpoiler.help; sourceTree = "<group>"; };
+		A6DEF33C89E07FFED9250E70 /* Pods-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-test/Pods-test.debug.xcconfig"; sourceTree = "<group>"; };
 		A6EBEFDBD79E44AC9C30CE0D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C007E2664B74743DFCCEF2B9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DBB3702F79574837B3AE6CC0 /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0B6E7DD78264AD0B37E6DCA /* Pods-test.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test.xcconfig"; path = "Pods/Pods-test.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21B6D95DE3410A5046DF72F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C007E2664B74743DFCCEF2B9 /* Pods.debug.xcconfig */,
+				722DE86E65C650666E69E1D8 /* Pods.release.xcconfig */,
+				A6DEF33C89E07FFED9250E70 /* Pods-test.debug.xcconfig */,
+				0D1A97A2EB01F9A197F36FE9 /* Pods-test.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		78028C0E17FCA0DC0099EA23 /* OutlineViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,8 +336,7 @@
 				783451D2185EE861007CDD3B /* iSpoilerTests */,
 				78A95C4617CCA1B50072D47B /* Frameworks */,
 				78A95C4517CCA1B50072D47B /* Products */,
-				2587C89FAD0E4DA1A3CD81E6 /* Pods.xcconfig */,
-				F0B6E7DD78264AD0B37E6DCA /* Pods-test.xcconfig */,
+				21B6D95DE3410A5046DF72F1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -630,7 +642,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		38392A386FEA49719630103A /* Check Pods Manifest.lock */ = {
@@ -673,7 +685,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-test-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -794,7 +806,7 @@
 /* Begin XCBuildConfiguration section */
 		783451DE185EE861007CDD3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0B6E7DD78264AD0B37E6DCA /* Pods-test.xcconfig */;
+			baseConfigurationReference = A6DEF33C89E07FFED9250E70 /* Pods-test.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSpoiler.app/Contents/MacOS/iSpoiler";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -818,7 +830,7 @@
 		};
 		783451DF185EE861007CDD3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0B6E7DD78264AD0B37E6DCA /* Pods-test.xcconfig */;
+			baseConfigurationReference = 0D1A97A2EB01F9A197F36FE9 /* Pods-test.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSpoiler.app/Contents/MacOS/iSpoiler";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -910,14 +922,14 @@
 		};
 		78A95C7617CCA1B60072D47B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2587C89FAD0E4DA1A3CD81E6 /* Pods.xcconfig */;
+			baseConfigurationReference = C007E2664B74743DFCCEF2B9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = iSpoiler/iSpoiler.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSpoiler/iSpoiler-Prefix.pch";
@@ -932,14 +944,14 @@
 		};
 		78A95C7717CCA1B60072D47B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2587C89FAD0E4DA1A3CD81E6 /* Pods.xcconfig */;
+			baseConfigurationReference = 722DE86E65C650666E69E1D8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = iSpoiler/iSpoiler.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSpoiler/iSpoiler-Prefix.pch";

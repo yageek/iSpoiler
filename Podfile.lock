@@ -9,8 +9,8 @@ DEPENDENCIES:
   - Specta (= 0.2.1)
 
 SPEC CHECKSUMS:
-  Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
-  RegexKitLite: f7af7b4d2b675cd2ec9a4abab6aad6ae1f6499c0
-  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
+  Expecta: 578e0c29df79a96a159187599e2def686ef6a66c
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.35.0
