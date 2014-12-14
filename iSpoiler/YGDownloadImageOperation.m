@@ -249,15 +249,15 @@
     //Get element from cache
     GeoCache * cache  = _currentImage.cache;
     
-    float lat =[cache.lat floatValue];
-    float lon = [cache.lon floatValue];
-    NSString * latRef = (lat < 0 ) ? lat-=1.0 , @"S" : @"N";
-    NSString * lonRef = (lon < 0 ) ? lon-=1.0 , @"W" : @"E";
+    double lat = cache.latValue;
+    double lon = cache.lonValue;
+    NSString * latRef = (lat < 0 ) ? lat*=-1.0 , @"S" : @"N";
+    NSString * lonRef = (lon < 0 ) ? lon*=-1.0 , @"W" : @"E";
     
-    [GPSDictionary setObject:[NSNumber numberWithFloat:lat] forKey:(NSString*)kCGImagePropertyGPSLatitude];
+    [GPSDictionary setObject:[NSNumber numberWithDouble:lat] forKey:(NSString*)kCGImagePropertyGPSLatitude];
     [GPSDictionary setObject:latRef forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
     
-    [GPSDictionary setObject:[NSNumber numberWithFloat:lon] forKey:(NSString*)kCGImagePropertyGPSLongitude];
+    [GPSDictionary setObject:[NSNumber numberWithDouble:lon] forKey:(NSString*)kCGImagePropertyGPSLongitude];
     [GPSDictionary setObject:lonRef forKey:(NSString*)kCGImagePropertyGPSLongitudeRef];
     
     //add our modified GPS data back into the image's metadata
