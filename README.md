@@ -8,9 +8,12 @@ iSpoiler
 Mac OS X spoiler downloader tool for geocaching.com.
 
 ## Download
-Github Release : [Last release (1.2.1)](https://github.com/yageek/iSpoiler/releases/download/1.2.1/iSpoiler1.2.1.dmg)
+Github Release : [Last release (1.2.3)](https://github.com/yageek/iSpoiler/releases/download/1.2.3/iSpoiler1.2.3.dmg)
 
 # Changelog 
+#### 1.2.3
+* Fix a bug affecting cache with negative coordinates
+
 #### 1.2.1
 * Fix iCaching GPX import bug
 * Memory leaks fixed
