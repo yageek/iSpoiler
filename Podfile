@@ -1,9 +1,9 @@
 platform :osx, '10.6'
-pod 'RegexKitLite', '~> 4.0'
+pod 'RegexKitLite'
 
 target :test,:exclusive => true do
 
         link_with 'iSpoilerTests'
-		pod 'Specta', '0.2.1'
-        pod 'Expecta', '~> 0.2.3' 
+	pod 'Specta'
+        pod 'Expecta'
 end 

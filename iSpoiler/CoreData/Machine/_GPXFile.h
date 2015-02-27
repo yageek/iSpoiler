@@ -3,7 +3,6 @@
 
 #import <CoreData/CoreData.h>
 
-
 extern const struct GPXFileAttributes {
 	 NSString *generatedTime;
 	 NSString *importedDate;
@@ -14,14 +13,7 @@ extern const struct GPXFileRelationships {
 	 NSString *caches;
 } GPXFileRelationships;
 
-extern const struct GPXFileFetchedProperties {
-} GPXFileFetchedProperties;
-
 @class GeoCache;
-
-
-
-
 
 @interface GPXFileID : NSManagedObjectID {}
 @end
@@ -30,54 +22,27 @@ extern const struct GPXFileFetchedProperties {
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (GPXFileID*)objectID;
-
-
-
-
+@property (nonatomic, readonly, strong) GPXFileID* objectID;
 
 @property (nonatomic, retain) NSDate* generatedTime;
 
-
-
 //- (BOOL)validateGeneratedTime:(id*)value_ error:(NSError**)error_;
-
-
-
-
 
 @property (nonatomic, retain) NSDate* importedDate;
 
-
-
 //- (BOOL)validateImportedDate:(id*)value_ error:(NSError**)error_;
-
-
-
-
 
 @property (nonatomic, retain) NSString* name;
 
-
-
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
-
-
-
-
 
 @property (nonatomic, retain) NSSet *caches;
 
 - (NSMutableSet*)cachesSet;
 
-
-
-
-
 @end
 
-@interface _GPXFile (CoreDataGeneratedAccessors)
-
+@interface _GPXFile (CachesCoreDataGeneratedAccessors)
 - (void)addCaches:(NSSet*)value_;
 - (void)removeCaches:(NSSet*)value_;
 - (void)addCachesObject:(GeoCache*)value_;
@@ -87,28 +52,16 @@ extern const struct GPXFileFetchedProperties {
 
 @interface _GPXFile (CoreDataGeneratedPrimitiveAccessors)
 
-
 - (NSDate*)primitiveGeneratedTime;
 - (void)setPrimitiveGeneratedTime:(NSDate*)value;
-
-
-
 
 - (NSDate*)primitiveImportedDate;
 - (void)setPrimitiveImportedDate:(NSDate*)value;
 
-
-
-
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
 
-
-
-
-
 - (NSMutableSet*)primitiveCaches;
 - (void)setPrimitiveCaches:(NSMutableSet*)value;
-
 
 @end

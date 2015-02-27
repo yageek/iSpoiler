@@ -15,9 +15,6 @@ const struct GeoCacheRelationships GeoCacheRelationships = {
 	.images = @"images",
 };
 
-const struct GeoCacheFetchedProperties GeoCacheFetchedProperties = {
-};
-
 @implementation GeoCacheID
 @end
 
@@ -43,7 +40,7 @@ const struct GeoCacheFetchedProperties GeoCacheFetchedProperties = {
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
-	
+
 	if ([key isEqualToString:@"latValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"lat"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -58,19 +55,9 @@ const struct GeoCacheFetchedProperties GeoCacheFetchedProperties = {
 	return keyPaths;
 }
 
-
-
-
 @dynamic gccode;
 
-
-
-
-
-
 @dynamic lat;
-
-
 
 - (double)latValue {
 	NSNumber *result = [self lat];
@@ -90,13 +77,7 @@ const struct GeoCacheFetchedProperties GeoCacheFetchedProperties = {
 	[self setPrimitiveLat:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic lon;
-
-
 
 - (double)lonValue {
 	NSNumber *result = [self lon];
@@ -116,37 +97,20 @@ const struct GeoCacheFetchedProperties GeoCacheFetchedProperties = {
 	[self setPrimitiveLon:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic name;
-
-
-
-
-
 
 @dynamic gpxFile;
 
-	
-
 @dynamic images;
 
-	
 - (NSMutableSet*)imagesSet {
 	[self willAccessValueForKey:@"images"];
-  
+
 	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"images"];
-  
+
 	[self didAccessValueForKey:@"images"];
 	return result;
 }
-	
-
-
-
-
-
 
 @end
+

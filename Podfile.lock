@@ -4,9 +4,9 @@ PODS:
   - Specta (0.2.1)
 
 DEPENDENCIES:
-  - Expecta (~> 0.2.3)
-  - RegexKitLite (~> 4.0)
-  - Specta (= 0.2.1)
+  - Expecta
+  - RegexKitLite
+  - Specta
 
 SPEC CHECKSUMS:
   Expecta: 578e0c29df79a96a159187599e2def686ef6a66c
