@@ -169,7 +169,8 @@
                 NSString *imageUrl = [[found componentsMatchedByRegex:IMG_LINK_REGEXP_4 capture:1] lastObject];
                 NSString * imageName = [[found componentsMatchedByRegex:IMG_LINK_REGEXP_4 capture:2] lastObject];
                 
-                if([[NSApp delegate] downloadSpoilersOnly])
+                YGAppDelegate * delegate = (YGAppDelegate*) [NSApp delegate];
+                if([delegate downloadSpoilersOnly])
                 {
                     if([imageName rangeOfString:@"spoiler" options:NSCaseInsensitiveSearch].location == NSNotFound)
                     {
