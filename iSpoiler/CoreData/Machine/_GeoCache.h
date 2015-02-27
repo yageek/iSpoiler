@@ -3,7 +3,6 @@
 
 #import <CoreData/CoreData.h>
 
-
 extern const struct GeoCacheAttributes {
 	 NSString *gccode;
 	 NSString *lat;
@@ -16,16 +15,8 @@ extern const struct GeoCacheRelationships {
 	 NSString *images;
 } GeoCacheRelationships;
 
-extern const struct GeoCacheFetchedProperties {
-} GeoCacheFetchedProperties;
-
 @class GPXFile;
 @class Image;
-
-
-
-
-
 
 @interface GeoCacheID : NSManagedObjectID {}
 @end
@@ -34,79 +25,43 @@ extern const struct GeoCacheFetchedProperties {
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (GeoCacheID*)objectID;
-
-
-
-
+@property (nonatomic, readonly, strong) GeoCacheID* objectID;
 
 @property (nonatomic, retain) NSString* gccode;
 
-
-
 //- (BOOL)validateGccode:(id*)value_ error:(NSError**)error_;
-
-
-
-
 
 @property (nonatomic, retain) NSNumber* lat;
 
-
-
-@property double latValue;
+@property (atomic) double latValue;
 - (double)latValue;
 - (void)setLatValue:(double)value_;
 
 //- (BOOL)validateLat:(id*)value_ error:(NSError**)error_;
 
-
-
-
-
 @property (nonatomic, retain) NSNumber* lon;
 
-
-
-@property double lonValue;
+@property (atomic) double lonValue;
 - (double)lonValue;
 - (void)setLonValue:(double)value_;
 
 //- (BOOL)validateLon:(id*)value_ error:(NSError**)error_;
 
-
-
-
-
 @property (nonatomic, retain) NSString* name;
 
-
-
 //- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
-
-
-
-
 
 @property (nonatomic, retain) GPXFile *gpxFile;
 
 //- (BOOL)validateGpxFile:(id*)value_ error:(NSError**)error_;
 
-
-
-
 @property (nonatomic, retain) NSSet *images;
 
 - (NSMutableSet*)imagesSet;
 
-
-
-
-
 @end
 
-@interface _GeoCache (CoreDataGeneratedAccessors)
-
+@interface _GeoCache (ImagesCoreDataGeneratedAccessors)
 - (void)addImages:(NSSet*)value_;
 - (void)removeImages:(NSSet*)value_;
 - (void)addImagesObject:(Image*)value_;
@@ -116,12 +71,8 @@ extern const struct GeoCacheFetchedProperties {
 
 @interface _GeoCache (CoreDataGeneratedPrimitiveAccessors)
 
-
 - (NSString*)primitiveGccode;
 - (void)setPrimitiveGccode:(NSString*)value;
-
-
-
 
 - (NSNumber*)primitiveLat;
 - (void)setPrimitiveLat:(NSNumber*)value;
@@ -129,32 +80,19 @@ extern const struct GeoCacheFetchedProperties {
 - (double)primitiveLatValue;
 - (void)setPrimitiveLatValue:(double)value_;
 
-
-
-
 - (NSNumber*)primitiveLon;
 - (void)setPrimitiveLon:(NSNumber*)value;
 
 - (double)primitiveLonValue;
 - (void)setPrimitiveLonValue:(double)value_;
 
-
-
-
 - (NSString*)primitiveName;
 - (void)setPrimitiveName:(NSString*)value;
-
-
-
-
 
 - (GPXFile*)primitiveGpxFile;
 - (void)setPrimitiveGpxFile:(GPXFile*)value;
 
-
-
 - (NSMutableSet*)primitiveImages;
 - (void)setPrimitiveImages:(NSMutableSet*)value;
-
 
 @end

@@ -14,9 +14,6 @@ const struct ImageRelationships ImageRelationships = {
 	.cache = @"cache",
 };
 
-const struct ImageFetchedProperties ImageFetchedProperties = {
-};
-
 @implementation ImageID
 @end
 
@@ -42,7 +39,7 @@ const struct ImageFetchedProperties ImageFetchedProperties = {
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
-	
+
 	if ([key isEqualToString:@"downloadedValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"downloaded"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
@@ -57,12 +54,7 @@ const struct ImageFetchedProperties ImageFetchedProperties = {
 	return keyPaths;
 }
 
-
-
-
 @dynamic downloaded;
-
-
 
 - (BOOL)downloadedValue {
 	NSNumber *result = [self downloaded];
@@ -82,20 +74,9 @@ const struct ImageFetchedProperties ImageFetchedProperties = {
 	[self setPrimitiveDownloaded:[NSNumber numberWithBool:value_]];
 }
 
-
-
-
-
 @dynamic name;
 
-
-
-
-
-
 @dynamic type;
-
-
 
 - (int16_t)typeValue {
 	NSNumber *result = [self type];
@@ -115,24 +96,9 @@ const struct ImageFetchedProperties ImageFetchedProperties = {
 	[self setPrimitiveType:[NSNumber numberWithShort:value_]];
 }
 
-
-
-
-
 @dynamic url;
-
-
-
-
-
 
 @dynamic cache;
 
-	
-
-
-
-
-
-
 @end
+
