@@ -13,9 +13,6 @@ const struct GPXFileRelationships GPXFileRelationships = {
 	.caches = @"caches",
 };
 
-const struct GPXFileFetchedProperties GPXFileFetchedProperties = {
-};
-
 @implementation GPXFileID
 @end
 
@@ -41,51 +38,26 @@ const struct GPXFileFetchedProperties GPXFileFetchedProperties = {
 
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
-	
 
 	return keyPaths;
 }
 
-
-
-
 @dynamic generatedTime;
-
-
-
-
-
 
 @dynamic importedDate;
 
-
-
-
-
-
 @dynamic name;
-
-
-
-
-
 
 @dynamic caches;
 
-	
 - (NSMutableSet*)cachesSet {
 	[self willAccessValueForKey:@"caches"];
-  
+
 	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"caches"];
-  
+
 	[self didAccessValueForKey:@"caches"];
 	return result;
 }
-	
-
-
-
-
-
 
 @end
+
