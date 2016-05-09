@@ -510,6 +510,7 @@
 				783451CD185EE861007CDD3B /* Frameworks */,
 				783451CE185EE861007CDD3B /* Resources */,
 				FAAC02D1917B4B0CBECB1C61 /* Copy Pods Resources */,
+				9E53B0BEC47683AA79D13CE2 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -530,6 +531,7 @@
 				78A95C4117CCA1B50072D47B /* Frameworks */,
 				78A95C4217CCA1B50072D47B /* Resources */,
 				33DE43EDABB44B9194A2E846 /* Copy Pods Resources */,
+				A387449E202292F802D003EA /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -672,6 +674,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
 			shellScript = "cd $SRCROOT/iSpoiler/\nmogenerator -m GpxModel.xcdatamodeld/GpxModel.xcdatamodel -M CoreData/Machine -H CoreData/Human";
+		};
+		9E53B0BEC47683AA79D13CE2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A387449E202292F802D003EA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FAAC02D1917B4B0CBECB1C61 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

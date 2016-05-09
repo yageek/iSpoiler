@@ -1,19 +1,15 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to GeoCache.h instead.
 
-#import <CoreData/CoreData.h>
+#if __has_feature(modules)
+    @import Foundation;
+    @import CoreData;
+#else
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif
 
-extern const struct GeoCacheAttributes {
-	 NSString *gccode;
-	 NSString *lat;
-	 NSString *lon;
-	 NSString *name;
-} GeoCacheAttributes;
-
-extern const struct GeoCacheRelationships {
-	 NSString *gpxFile;
-	 NSString *images;
-} GeoCacheRelationships;
+NS_ASSUME_NONNULL_BEGIN
 
 @class GPXFile;
 @class Image;
@@ -21,49 +17,38 @@ extern const struct GeoCacheRelationships {
 @interface GeoCacheID : NSManagedObjectID {}
 @end
 
-@interface _GeoCache : NSManagedObject {}
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
+@interface _GeoCache : NSManagedObject
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-@property (nonatomic, readonly, strong) GeoCacheID* objectID;
+@property (nonatomic, readonly, strong) GeoCacheID *objectID;
 
-@property (nonatomic, retain) NSString* gccode;
+@property (nonatomic, strong, nullable) NSString* gccode;
 
-//- (BOOL)validateGccode:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, retain) NSNumber* lat;
+@property (nonatomic, strong, nullable) NSNumber* lat;
 
 @property (atomic) double latValue;
 - (double)latValue;
 - (void)setLatValue:(double)value_;
 
-//- (BOOL)validateLat:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, retain) NSNumber* lon;
+@property (nonatomic, strong, nullable) NSNumber* lon;
 
 @property (atomic) double lonValue;
 - (double)lonValue;
 - (void)setLonValue:(double)value_;
 
-//- (BOOL)validateLon:(id*)value_ error:(NSError**)error_;
+@property (nonatomic, strong, nullable) NSString* name;
 
-@property (nonatomic, retain) NSString* name;
+@property (nonatomic, strong, nullable) GPXFile *gpxFile;
 
-//- (BOOL)validateName:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, retain) GPXFile *gpxFile;
-
-//- (BOOL)validateGpxFile:(id*)value_ error:(NSError**)error_;
-
-@property (nonatomic, retain) NSSet *images;
-
-- (NSMutableSet*)imagesSet;
+@property (nonatomic, strong, nullable) NSSet<Image*> *images;
+- (nullable NSMutableSet<Image*>*)imagesSet;
 
 @end
 
 @interface _GeoCache (ImagesCoreDataGeneratedAccessors)
-- (void)addImages:(NSSet*)value_;
-- (void)removeImages:(NSSet*)value_;
+- (void)addImages:(NSSet<Image*>*)value_;
+- (void)removeImages:(NSSet<Image*>*)value_;
 - (void)addImagesObject:(Image*)value_;
 - (void)removeImagesObject:(Image*)value_;
 
@@ -92,7 +77,21 @@ extern const struct GeoCacheRelationships {
 - (GPXFile*)primitiveGpxFile;
 - (void)setPrimitiveGpxFile:(GPXFile*)value;
 
-- (NSMutableSet*)primitiveImages;
-- (void)setPrimitiveImages:(NSMutableSet*)value;
+- (NSMutableSet<Image*>*)primitiveImages;
+- (void)setPrimitiveImages:(NSMutableSet<Image*>*)value;
 
 @end
+
+@interface GeoCacheAttributes: NSObject 
++ (NSString *)gccode;
++ (NSString *)lat;
++ (NSString *)lon;
++ (NSString *)name;
+@end
+
+@interface GeoCacheRelationships: NSObject
++ (NSString *)gpxFile;
++ (NSString *)images;
+@end
+
+NS_ASSUME_NONNULL_END

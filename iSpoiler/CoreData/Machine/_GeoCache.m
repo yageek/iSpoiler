@@ -3,24 +3,12 @@
 
 #import "_GeoCache.h"
 
-const struct GeoCacheAttributes GeoCacheAttributes = {
-	.gccode = @"gccode",
-	.lat = @"lat",
-	.lon = @"lon",
-	.name = @"name",
-};
-
-const struct GeoCacheRelationships GeoCacheRelationships = {
-	.gpxFile = @"gpxFile",
-	.images = @"images",
-};
-
 @implementation GeoCacheID
 @end
 
 @implementation _GeoCache
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"GeoCache" inManagedObjectContext:moc_];
 }
@@ -65,7 +53,7 @@ const struct GeoCacheRelationships GeoCacheRelationships = {
 }
 
 - (void)setLatValue:(double)value_ {
-	[self setLat:[NSNumber numberWithDouble:value_]];
+	[self setLat:@(value_)];
 }
 
 - (double)primitiveLatValue {
@@ -74,7 +62,7 @@ const struct GeoCacheRelationships GeoCacheRelationships = {
 }
 
 - (void)setPrimitiveLatValue:(double)value_ {
-	[self setPrimitiveLat:[NSNumber numberWithDouble:value_]];
+	[self setPrimitiveLat:@(value_)];
 }
 
 @dynamic lon;
@@ -85,7 +73,7 @@ const struct GeoCacheRelationships GeoCacheRelationships = {
 }
 
 - (void)setLonValue:(double)value_ {
-	[self setLon:[NSNumber numberWithDouble:value_]];
+	[self setLon:@(value_)];
 }
 
 - (double)primitiveLonValue {
@@ -94,7 +82,7 @@ const struct GeoCacheRelationships GeoCacheRelationships = {
 }
 
 - (void)setPrimitiveLonValue:(double)value_ {
-	[self setPrimitiveLon:[NSNumber numberWithDouble:value_]];
+	[self setPrimitiveLon:@(value_)];
 }
 
 @dynamic name;
@@ -103,14 +91,38 @@ const struct GeoCacheRelationships GeoCacheRelationships = {
 
 @dynamic images;
 
-- (NSMutableSet*)imagesSet {
+- (NSMutableSet<Image*>*)imagesSet {
 	[self willAccessValueForKey:@"images"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"images"];
+	NSMutableSet<Image*> *result = (NSMutableSet<Image*>*)[self mutableSetValueForKey:@"images"];
 
 	[self didAccessValueForKey:@"images"];
 	return result;
 }
 
+@end
+
+@implementation GeoCacheAttributes 
++ (NSString *)gccode {
+	return @"gccode";
+}
++ (NSString *)lat {
+	return @"lat";
+}
++ (NSString *)lon {
+	return @"lon";
+}
++ (NSString *)name {
+	return @"name";
+}
+@end
+
+@implementation GeoCacheRelationships 
++ (NSString *)gpxFile {
+	return @"gpxFile";
+}
++ (NSString *)images {
+	return @"images";
+}
 @end
 

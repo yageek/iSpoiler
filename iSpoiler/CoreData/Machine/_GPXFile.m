@@ -3,22 +3,12 @@
 
 #import "_GPXFile.h"
 
-const struct GPXFileAttributes GPXFileAttributes = {
-	.generatedTime = @"generatedTime",
-	.importedDate = @"importedDate",
-	.name = @"name",
-};
-
-const struct GPXFileRelationships GPXFileRelationships = {
-	.caches = @"caches",
-};
-
 @implementation GPXFileID
 @end
 
 @implementation _GPXFile
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"GPXFile" inManagedObjectContext:moc_];
 }
@@ -50,14 +40,32 @@ const struct GPXFileRelationships GPXFileRelationships = {
 
 @dynamic caches;
 
-- (NSMutableSet*)cachesSet {
+- (NSMutableSet<GeoCache*>*)cachesSet {
 	[self willAccessValueForKey:@"caches"];
 
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"caches"];
+	NSMutableSet<GeoCache*> *result = (NSMutableSet<GeoCache*>*)[self mutableSetValueForKey:@"caches"];
 
 	[self didAccessValueForKey:@"caches"];
 	return result;
 }
 
+@end
+
+@implementation GPXFileAttributes 
++ (NSString *)generatedTime {
+	return @"generatedTime";
+}
++ (NSString *)importedDate {
+	return @"importedDate";
+}
++ (NSString *)name {
+	return @"name";
+}
+@end
+
+@implementation GPXFileRelationships 
++ (NSString *)caches {
+	return @"caches";
+}
 @end
 
