@@ -2,6 +2,6 @@
   "name": "iSpoiler",
   "tagline": "Mac os X Spoiler Downloader Tool",
   "body": "iSpoiler\r\n========\r\n\r\n[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=YaGeek&url=https://github.com/yageek/iSpoiler&title=iSpoiler&language=&tags=github&category=software)\r\n\r\n![Screenshot](https://github.com/YaGeek/iSpoiler/raw/gh-pages/images/1.2_screenshot.png)\r\n\r\nMac OS X spoiler downloader tool for geocaching.com.\r\n\r\n## Download\r\nGithub Release : [Last release (1.2.5)](https://github.com/yageek/iSpoiler/releases/download/1.2.5/iSpoiler_1.2.5.dmg)\r\n\r\n# Changelog \r\n#### 1.2.5\r\n* Accept linked prefixed with `https` \r\n\r\n#### 1.2.4\r\n* Fix download bug due to change on geocaching.com\r\n\r\n#### 1.2.3\r\n* Fix a bug affecting cache with negative coordinates\r\n\r\n#### 1.2.1\r\n* Fix iCaching GPX import bug\r\n* Memory leaks fixed\r\n\r\n#### 1.2\r\n* First open source release\r\n",
-  "google": "UA-8368725-2",
+  "google": "UA-47325342-2",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
