@@ -3,23 +3,12 @@
 
 #import "_Image.h"
 
-const struct ImageAttributes ImageAttributes = {
-	.downloaded = @"downloaded",
-	.name = @"name",
-	.type = @"type",
-	.url = @"url",
-};
-
-const struct ImageRelationships ImageRelationships = {
-	.cache = @"cache",
-};
-
 @implementation ImageID
 @end
 
 @implementation _Image
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:moc_];
 }
@@ -62,7 +51,7 @@ const struct ImageRelationships ImageRelationships = {
 }
 
 - (void)setDownloadedValue:(BOOL)value_ {
-	[self setDownloaded:[NSNumber numberWithBool:value_]];
+	[self setDownloaded:@(value_)];
 }
 
 - (BOOL)primitiveDownloadedValue {
@@ -71,7 +60,7 @@ const struct ImageRelationships ImageRelationships = {
 }
 
 - (void)setPrimitiveDownloadedValue:(BOOL)value_ {
-	[self setPrimitiveDownloaded:[NSNumber numberWithBool:value_]];
+	[self setPrimitiveDownloaded:@(value_)];
 }
 
 @dynamic name;
@@ -84,21 +73,33 @@ const struct ImageRelationships ImageRelationships = {
 }
 
 - (void)setTypeValue:(int16_t)value_ {
-	[self setType:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveTypeValue {
-	NSNumber *result = [self primitiveType];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveTypeValue:(int16_t)value_ {
-	[self setPrimitiveType:[NSNumber numberWithShort:value_]];
+	[self setType:@(value_)];
 }
 
 @dynamic url;
 
 @dynamic cache;
 
+@end
+
+@implementation ImageAttributes 
++ (NSString *)downloaded {
+	return @"downloaded";
+}
++ (NSString *)name {
+	return @"name";
+}
++ (NSString *)type {
+	return @"type";
+}
++ (NSString *)url {
+	return @"url";
+}
+@end
+
+@implementation ImageRelationships 
++ (NSString *)cache {
+	return @"cache";
+}
 @end
 
