@@ -12,7 +12,7 @@ Github Release : [Last release (1.2.5)](https://github.com/yageek/iSpoiler/relea
 
 # Changelog 
 #### 1.2.5
-* Accept linked prefixed with `https` 
+* Accept links prefixed with `https` 
 
 #### 1.2.4
 * Fix download bug due to change on geocaching.com
