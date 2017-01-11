@@ -1,6 +1,6 @@
 iSpoiler
 ========
-
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GRH6CMKPC2BPC)
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=YaGeek&url=https://github.com/yageek/iSpoiler&title=iSpoiler&language=&tags=github&category=software)
 
 ![Screenshot](https://github.com/YaGeek/iSpoiler/raw/gh-pages/images/1.2_screenshot.png)
