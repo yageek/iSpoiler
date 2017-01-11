@@ -1,3 +1,4 @@
+source "https://github.com/CocoaPods/Old-Specs"
 platform :osx, '10.6'
 pod 'RegexKitLite', '~> 4.0'
 
