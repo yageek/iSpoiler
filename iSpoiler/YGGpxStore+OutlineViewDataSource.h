@@ -7,7 +7,7 @@
 //
 
 #import "YGGpxStore.h"
-
+@import Cocoa;
 @interface YGGpxStore (OutlineViewDataSource)<NSOutlineViewDataSource>
 
 - (void) resetAllNodesInNode:(YGNodeItem*) node;
