@@ -10,7 +10,7 @@
 #import "GeoCache.h"
 #import "YGNodeItem.h"
 
-typedef void(^completionBlock)();
+typedef void(^completionBlock)(void);
 @interface YGDownloadManager : NSObject
 {
     NSOperationQueue * _downloadHTMLQueue;

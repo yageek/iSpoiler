@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 YaGeek. All rights reserved.
 //
 
-#import "YGAppDelegate+importGPX.h"
+#import "YGAppDelegate+ImportGPX.h"
 #import "YGGpxStore+ImportGPX.h"
 #import "YGAppDelegate+StatusBar.h"
 #import "GPXFile.h"

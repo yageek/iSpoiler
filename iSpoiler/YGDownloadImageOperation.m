@@ -251,9 +251,24 @@
     
     double lat = cache.latValue;
     double lon = cache.lonValue;
-    NSString * latRef = (lat < 0 ) ? lat*=-1.0 , @"S" : @"N";
-    NSString * lonRef = (lon < 0 ) ? lon*=-1.0 , @"W" : @"E";
-    
+
+    NSString * latRef = nil;
+    NSString * lonRef = nil;
+
+    if (lat < 0) {
+        lat *= -1.0;
+        latRef = @"S";
+    } else {
+        latRef = @"N";
+    }
+
+    if (lon < 0) {
+        lon *= -1.0;
+        lonRef = @"W";
+    } else {
+        lonRef = @"E";
+    }
+
     [GPSDictionary setObject:[NSNumber numberWithDouble:lat] forKey:(NSString*)kCGImagePropertyGPSLatitude];
     [GPSDictionary setObject:latRef forKey:(NSString*)kCGImagePropertyGPSLatitudeRef];
     
@@ -281,7 +296,9 @@
     
     NSData * imgData = [NSData dataWithContentsOfFile:path] ;
     NSBitmapImageRep* bitmap = [NSBitmapImageRep imageRepWithData: imgData];
-    NSData* newData = [bitmap representationUsingType: NSJPEGFileType properties: nil];
+    NSData* newData = [bitmap representationUsingType:NSJPEGFileType properties:@{
+        NSImageCompressionFactor: @8.0,
+    }];
 
     NSError * error;
     if(![[NSFileManager defaultManager] removeItemAtPath:path error:&error])

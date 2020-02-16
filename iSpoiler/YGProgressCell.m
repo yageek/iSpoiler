@@ -13,17 +13,6 @@
 #define HEIGHT_RATIO 0.7
 @implementation YGProgressCell
 
-
-- (id) initImageCell:(NSImage *)image
-{
-    return [self init];
-}
-
-- (id) initTextCell:(NSString *)aString
-{
-    return [self init];
-}
-
 - (void) drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
     float value = [self.objectValue floatValue];

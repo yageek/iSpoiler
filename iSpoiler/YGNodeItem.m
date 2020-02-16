@@ -10,6 +10,7 @@
 #import "GeoCache.h"
 #import "Image.h"
 #import "YGDownloadHTMLOperation.h"
+@import Cocoa;
 @implementation YGNodeItem
 
 @synthesize parent = _parent;
