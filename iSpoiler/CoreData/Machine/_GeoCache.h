@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _GeoCache : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) GeoCacheID *objectID;
 
 @property (nonatomic, strong, nullable) NSString* gccode;
@@ -56,26 +56,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _GeoCache (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSString*)primitiveGccode;
-- (void)setPrimitiveGccode:(NSString*)value;
+- (nullable NSString*)primitiveGccode;
+- (void)setPrimitiveGccode:(nullable NSString*)value;
 
-- (NSNumber*)primitiveLat;
-- (void)setPrimitiveLat:(NSNumber*)value;
+- (nullable NSNumber*)primitiveLat;
+- (void)setPrimitiveLat:(nullable NSNumber*)value;
 
 - (double)primitiveLatValue;
 - (void)setPrimitiveLatValue:(double)value_;
 
-- (NSNumber*)primitiveLon;
-- (void)setPrimitiveLon:(NSNumber*)value;
+- (nullable NSNumber*)primitiveLon;
+- (void)setPrimitiveLon:(nullable NSNumber*)value;
 
 - (double)primitiveLonValue;
 - (void)setPrimitiveLonValue:(double)value_;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (nullable NSString*)primitiveName;
+- (void)setPrimitiveName:(nullable NSString*)value;
 
-- (GPXFile*)primitiveGpxFile;
-- (void)setPrimitiveGpxFile:(GPXFile*)value;
+- (nullable GPXFile*)primitiveGpxFile;
+- (void)setPrimitiveGpxFile:(nullable GPXFile*)value;
 
 - (NSMutableSet<Image*>*)primitiveImages;
 - (void)setPrimitiveImages:(NSMutableSet<Image*>*)value;

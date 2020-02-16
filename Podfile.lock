@@ -8,9 +8,17 @@ DEPENDENCIES:
   - RegexKitLite (~> 4.0)
   - Specta (= 0.2.1)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Expecta
+    - RegexKitLite
+    - Specta
+
 SPEC CHECKSUMS:
   Expecta: cfaf1d3e2e194ca704a25e997093d30a1ce70b61
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
   Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 026802fcc5ce7aed31ceec8820f9d43a0da1efd9
+
+COCOAPODS: 1.6.1

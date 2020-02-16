@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _Image : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) ImageID *objectID;
 
 @property (nonatomic, strong, nullable) NSNumber* downloaded;
@@ -44,20 +44,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _Image (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSNumber*)primitiveDownloaded;
-- (void)setPrimitiveDownloaded:(NSNumber*)value;
+- (nullable NSNumber*)primitiveDownloaded;
+- (void)setPrimitiveDownloaded:(nullable NSNumber*)value;
 
 - (BOOL)primitiveDownloadedValue;
 - (void)setPrimitiveDownloadedValue:(BOOL)value_;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (nullable NSString*)primitiveName;
+- (void)setPrimitiveName:(nullable NSString*)value;
 
-- (NSString*)primitiveUrl;
-- (void)setPrimitiveUrl:(NSString*)value;
+- (nullable NSString*)primitiveUrl;
+- (void)setPrimitiveUrl:(nullable NSString*)value;
 
-- (GeoCache*)primitiveCache;
-- (void)setPrimitiveCache:(GeoCache*)value;
+- (nullable GeoCache*)primitiveCache;
+- (void)setPrimitiveCache:(nullable GeoCache*)value;
 
 @end
 

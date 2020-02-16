@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface _GPXFile : NSManagedObject
 + (instancetype)insertInManagedObjectContext:(NSManagedObjectContext *)moc_;
 + (NSString*)entityName;
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
++ (nullable NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 @property (nonatomic, readonly, strong) GPXFileID *objectID;
 
 @property (nonatomic, strong, nullable) NSDate* generatedTime;
@@ -43,14 +43,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface _GPXFile (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSDate*)primitiveGeneratedTime;
-- (void)setPrimitiveGeneratedTime:(NSDate*)value;
+- (nullable NSDate*)primitiveGeneratedTime;
+- (void)setPrimitiveGeneratedTime:(nullable NSDate*)value;
 
-- (NSDate*)primitiveImportedDate;
-- (void)setPrimitiveImportedDate:(NSDate*)value;
+- (nullable NSDate*)primitiveImportedDate;
+- (void)setPrimitiveImportedDate:(nullable NSDate*)value;
 
-- (NSString*)primitiveName;
-- (void)setPrimitiveName:(NSString*)value;
+- (nullable NSString*)primitiveName;
+- (void)setPrimitiveName:(nullable NSString*)value;
 
 - (NSMutableSet<GeoCache*>*)primitiveCaches;
 - (void)setPrimitiveCaches:(NSMutableSet<GeoCache*>*)value;
