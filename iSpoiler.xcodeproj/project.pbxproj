@@ -31,8 +31,6 @@
 		78331CC0183A1780009CEEDF /* YGDownloadImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78331CBF183A1780009CEEDF /* YGDownloadImageOperation.m */; };
 		78344E1D17FDC65F00C743E3 /* YGDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78344E1C17FDC65F00C743E3 /* YGDownloadManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		783451D1185EE861007CDD3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783451BC185EE7FE007CDD3B /* XCTest.framework */; };
-		783451E1185EE881007CDD3B /* YGGPXImportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 783451E0185EE881007CDD3B /* YGGPXImportTests.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		783451E3185EE887007CDD3B /* gpxTest.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 783451E2185EE887007CDD3B /* gpxTest.bundle */; };
 		7838A368181980CD007AB2C5 /* YGDownloadHTMLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7838A367181980CD007AB2C5 /* YGDownloadHTMLOperation.m */; };
 		783AE78A184E21B50044DFF2 /* _GeoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 783AE789184E21B50044DFF2 /* _GeoCache.m */; };
 		783AE78D184E21BE0044DFF2 /* GeoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 783AE78C184E21BE0044DFF2 /* GeoCache.m */; };
@@ -112,10 +110,6 @@
 		78344E1C17FDC65F00C743E3 /* YGDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDownloadManager.m; sourceTree = "<group>"; };
 		783451BC185EE7FE007CDD3B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		783451D0185EE861007CDD3B /* iSpoilerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSpoilerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		783451D4185EE861007CDD3B /* iSpoilerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSpoilerTests-Info.plist"; sourceTree = "<group>"; };
-		783451DA185EE861007CDD3B /* iSpoilerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSpoilerTests-Prefix.pch"; sourceTree = "<group>"; };
-		783451E0185EE881007CDD3B /* YGGPXImportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGGPXImportTests.m; sourceTree = "<group>"; };
-		783451E2185EE887007CDD3B /* gpxTest.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = gpxTest.bundle; sourceTree = "<group>"; };
 		7838A366181980CD007AB2C5 /* YGDownloadHTMLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDownloadHTMLOperation.h; sourceTree = "<group>"; };
 		7838A367181980CD007AB2C5 /* YGDownloadHTMLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDownloadHTMLOperation.m; sourceTree = "<group>"; };
 		783AE788184E21B50044DFF2 /* _GeoCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _GeoCache.h; path = CoreData/Machine/_GeoCache.h; sourceTree = "<group>"; };
@@ -256,25 +250,6 @@
 			name = Operations;
 			sourceTree = "<group>";
 		};
-		783451D2185EE861007CDD3B /* iSpoilerTests */ = {
-			isa = PBXGroup;
-			children = (
-				783451E2185EE887007CDD3B /* gpxTest.bundle */,
-				783451E0185EE881007CDD3B /* YGGPXImportTests.m */,
-				783451D3185EE861007CDD3B /* Supporting Files */,
-			);
-			path = iSpoilerTests;
-			sourceTree = "<group>";
-		};
-		783451D3185EE861007CDD3B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				783451D4185EE861007CDD3B /* iSpoilerTests-Info.plist */,
-				783451DA185EE861007CDD3B /* iSpoilerTests-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		783AE78E184E23660044DFF2 /* Localisation */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +300,6 @@
 				7812A617184E261600D3A73F /* Localizable.strings */,
 				78DDFE1F184E1C3900004733 /* iSpoiler.help */,
 				78A95C4D17CCA1B50072D47B /* iSpoiler */,
-				783451D2185EE861007CDD3B /* iSpoilerTests */,
 				78A95C4617CCA1B50072D47B /* Frameworks */,
 				78A95C4517CCA1B50072D47B /* Products */,
 				B300530B7538CF1AE578EB3A /* Pods */,
@@ -588,7 +562,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783451E3185EE887007CDD3B /* gpxTest.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +603,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783451E1185EE881007CDD3B /* YGGPXImportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
