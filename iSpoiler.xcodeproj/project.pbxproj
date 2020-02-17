@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5FA5D77351A8397461D6744E /* libPods-iSpoilerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9BFEEA78F9CEC613751100 /* libPods-iSpoilerTests.a */; };
+		560E4AD523FB2D6200C39607 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 560E4AD423FB2D6200C39607 /* RegexKitLite.m */; };
 		78028C1117FCA0F90099EA23 /* YGOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78028C1017FCA0F90099EA23 /* YGOutlineView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		78028C1417FCA1770099EA23 /* YGOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78028C1317FCA1770099EA23 /* YGOutlineViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		78028C1717FCBCEB0099EA23 /* YGAppDelegate+StatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 78028C1617FCBCEB0099EA23 /* YGAppDelegate+StatusBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -85,8 +85,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E9BFEEA78F9CEC613751100 /* libPods-iSpoilerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iSpoilerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64DB61419FB87C6E348211FE /* Pods-iSpoilerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSpoilerTests.release.xcconfig"; path = "Target Support Files/Pods-iSpoilerTests/Pods-iSpoilerTests.release.xcconfig"; sourceTree = "<group>"; };
+		560E4AD323FB2D6200C39607 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		560E4AD423FB2D6200C39607 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		560E4AD623FB2DA500C39607 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		560E4AD723FB2DAD00C39607 /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
 		78028C0F17FCA0F90099EA23 /* YGOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGOutlineView.h; sourceTree = "<group>"; };
 		78028C1017FCA0F90099EA23 /* YGOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGOutlineView.m; sourceTree = "<group>"; };
 		78028C1217FCA1770099EA23 /* YGOutlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGOutlineViewController.h; sourceTree = "<group>"; };
@@ -179,7 +181,6 @@
 		78DDFDFC184E112C00004733 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		78DDFDFD184E147000004733 /* ExportView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExportView.xib; sourceTree = "<group>"; };
 		78DDFE1F184E1C3900004733 /* iSpoiler.help */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iSpoiler.help; path = iSpoiler/iSpoiler.help; sourceTree = "<group>"; };
-		D87996422C038D7718A77230 /* Pods-iSpoilerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iSpoilerTests.debug.xcconfig"; path = "Target Support Files/Pods-iSpoilerTests/Pods-iSpoilerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				783451D1185EE861007CDD3B /* XCTest.framework in Frameworks */,
-				5FA5D77351A8397461D6744E /* libPods-iSpoilerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +205,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		560E4AD223FB2D5500C39607 /* 3rdParty */ = {
+			isa = PBXGroup;
+			children = (
+				560E4AD323FB2D6200C39607 /* RegexKitLite.h */,
+				560E4AD423FB2D6200C39607 /* RegexKitLite.m */,
+			);
+			name = 3rdParty;
+			sourceTree = "<group>";
+		};
 		78028C0E17FCA0DC0099EA23 /* OutlineViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +344,8 @@
 		78A95C4617CCA1B50072D47B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				560E4AD723FB2DAD00C39607 /* libicucore.A.tbd */,
+				560E4AD623FB2DA500C39607 /* libicucore.tbd */,
 				787A839C17FDA4C400A8A0D9 /* QuartzCore.framework */,
 				787A839A17FDA47300A8A0D9 /* CoreMedia.framework */,
 				7867A06E17CCD5E700D3A20C /* Cocoa.framework */,
@@ -342,7 +353,6 @@
 				78A95C4717CCA1B50072D47B /* Cocoa.framework */,
 				783451BC185EE7FE007CDD3B /* XCTest.framework */,
 				78A95C4917CCA1B50072D47B /* Other Frameworks */,
-				0E9BFEEA78F9CEC613751100 /* libPods-iSpoilerTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 		78A95C4D17CCA1B50072D47B /* iSpoiler */ = {
 			isa = PBXGroup;
 			children = (
+				560E4AD223FB2D5500C39607 /* 3rdParty */,
 				783AE78E184E23660044DFF2 /* Localisation */,
 				7805C2A3184DDC3000B49FAC /* Export */,
 				78DD17BB18196C3000AA7D9F /* Xib */,
@@ -482,8 +493,6 @@
 		B300530B7538CF1AE578EB3A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D87996422C038D7718A77230 /* Pods-iSpoilerTests.debug.xcconfig */,
-				64DB61419FB87C6E348211FE /* Pods-iSpoilerTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -495,7 +504,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 783451DD185EE861007CDD3B /* Build configuration list for PBXNativeTarget "iSpoilerTests" */;
 			buildPhases = (
-				F105C1972CEEF21DE276C2DC /* [CP] Check Pods Manifest.lock */,
 				783451CC185EE861007CDD3B /* Sources */,
 				783451CD185EE861007CDD3B /* Frameworks */,
 				783451CE185EE861007CDD3B /* Resources */,
@@ -615,28 +623,6 @@
 			shellPath = /bin/zsh;
 			shellScript = "cd $SRCROOT/iSpoiler/\nmogenerator -m GpxModel.xcdatamodeld/GpxModel.xcdatamodel -M CoreData/Machine -H CoreData/Human";
 		};
-		F105C1972CEEF21DE276C2DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iSpoilerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -670,6 +656,7 @@
 				78A95C8D17CCA89A0072D47B /* GpxModel.xcdatamodeld in Sources */,
 				7838A368181980CD007AB2C5 /* YGDownloadHTMLOperation.m in Sources */,
 				783AE78A184E21B50044DFF2 /* _GeoCache.m in Sources */,
+				560E4AD523FB2D6200C39607 /* RegexKitLite.m in Sources */,
 				78344E1D17FDC65F00C743E3 /* YGDownloadManager.m in Sources */,
 				787C6145184DD0FC007D0F30 /* YGAppDelegate+ExportToGPS.m in Sources */,
 				78028C1717FCBCEB0099EA23 /* YGAppDelegate+StatusBar.m in Sources */,
@@ -755,7 +742,6 @@
 /* Begin XCBuildConfiguration section */
 		783451DE185EE861007CDD3B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D87996422C038D7718A77230 /* Pods-iSpoilerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSpoiler.app/Contents/MacOS/iSpoiler";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -781,7 +767,6 @@
 		};
 		783451DF185EE861007CDD3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 64DB61419FB87C6E348211FE /* Pods-iSpoilerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iSpoiler.app/Contents/MacOS/iSpoiler";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -905,6 +890,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = iSpoiler/iSpoiler.entitlements;
 				CODE_SIGN_IDENTITY = "-";
@@ -914,6 +900,7 @@
 				INFOPLIST_FILE = "iSpoiler/iSpoiler-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yageekscompany.iSpoiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -926,6 +913,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = iSpoiler/iSpoiler.entitlements;
 				CODE_SIGN_IDENTITY = "-";
@@ -935,6 +923,7 @@
 				INFOPLIST_FILE = "iSpoiler/iSpoiler-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yageekscompany.iSpoiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

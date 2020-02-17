@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 YaGeek. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "GPXFile.h"
 #import "GeoCache.h"
 #import "YGBlockTypes.h"

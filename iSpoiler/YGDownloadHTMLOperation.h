@@ -12,6 +12,7 @@
 #define YGCacheRecordChanged @"net.yageek.ispoiler.RECORD_CHANGE"
 
 @interface YGDownloadHTMLOperation : NSOperation <NSURLConnectionDelegate>{
+    @private
     NSPersistentStoreCoordinator * _storeCoordinator;
     YGNodeItem* _nodeItem;
     
@@ -20,6 +21,7 @@
     BOOL _executing, _finished;
     GeoCache *  _currentCache;
     NSManagedObjectContext * _context;
+    NSRegularExpression *_imageRegExp;
 }
 
 - (id) initWithCacheNodeItem:(YGNodeItem*) node andPersistentStoreCoordinator:(NSPersistentStoreCoordinator*) coordinator;

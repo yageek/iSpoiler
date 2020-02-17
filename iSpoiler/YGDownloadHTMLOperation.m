@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 YaGeek. All rights reserved.
 //
 //http://img.geocaching.com/cache/large/82e01dc0-b8a5-4f6e-ac1d-bed2791b5f4c.jpg
+
+#import "RegexKitLite.h"
 #import "YGDownloadHTMLOperation.h"
-#import <RegexKitLite/RegexKitLite.h>
 #define IMG_LINK_REGEXP_4 @"<a href=\"(http|https://img\\.geocaching\\.com/cache/large/[a-zA-Z/]*\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}(?:\\.jpg|\\.png|\\.jpeg|\\.gif))\"(?:\\s*?[a-zA-Z]*=\"[a-zA-z]*\")+>([^<]*)</a>"
 #import "Image.h"
 #import "GeoCache.h"

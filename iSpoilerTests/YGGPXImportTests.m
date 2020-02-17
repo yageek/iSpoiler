@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 YaGeek. All rights reserved.
 //
 
-#import <Specta/Specta.h>
-#define EXP_SHORTHAND
-#import <Expecta/Expecta.h>
 #import "YGParseGPXOperation.h"
 #import "GeoCache.h"
 
